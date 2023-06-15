@@ -1,0 +1,280 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Spectral+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+    background: rgb(255,210,104);
+    background: linear-gradient(90deg, rgba(255,210,104,1) 0%, rgb(255, 237, 37) 91%);
+}
+
+form{
+    width: 100%;
+    height: 180px;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items: center;
+    gap: 40px;
+   
+}
+.emojisInput{
+    width: 550px;
+    height: 45px;
+    padding: 10px;
+    border: solid 2px black;
+    border-radius: 5px;
+    font-size: 19px;
+    outline: none;
+    letter-spacing: 1px;
+    font-family: 'Gowun Batang', serif;
+    background-color:rgb(255, 255, 255);
+}
+.myEmojisButton {
+    width: 150px;
+    height: 45px;
+    font-family: 'Gowun Batang', serif;
+    font-size: 20px;
+    background-color:white;
+    border: solid black 2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.myEmojisButton:hover {
+    background-color:#43a3e7;;
+    color:#fff;
+    transform: scale(1.05);
+    box-shadow: 2px 2px 6px rgb(255, 255, 255);
+}
+.myEmojis {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-image: url(https://img.freepik.com/free-photo/world-smile-day-emojis_23-2149024487.jpg?w=1380&t=st=1686387052~exp=1686387652~hmac=2dccc56d7812b3f85f67bdf967733ffdf5df6d3e9ed7b1794bac00506d5a249a);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.myEmojis.open {
+  display: block;
+}
+.myEmojis-content {
+  width: 100%;
+  height: 100vh;
+  display:flex ;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.title {
+ font-size: 45px;
+ margin-bottom: 20px;
+ padding:5px 0px;
+ text-align:center;
+ border-radius:5px;
+ background-color: rgb(255, 226, 4);
+}
+.myEmojisUl {
+width: 600px;
+height: 500px;
+display: flex;
+flex-direction: column;
+overflow:auto;
+scrollbar-width:none;
+padding: 10px;
+border: 2px solid rgb(0, 0, 0);
+border-radius: 5px;
+background-color: rgb(0, 0, 0,0.8);
+box-shadow: 0 3px 6px rgba(0, 0, 0, 0.9);
+  
+}
+.myEmojisList {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  list-style-type: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.myEmojiCharacter {
+  font-size: 35px;
+}
+.myEmojisName{
+font-size: 25px;
+margin-left: 10px;
+color: #fff;
+}
+.removeEmoji {
+  height: 35px;
+  padding: 3px;
+  border: none;
+  border-radius: 5px;
+  background-color:rgb(255, 255, 255);
+}
+.removeEmoji:hover {
+  background-color: red;
+
+}
+.close{
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  padding: 3px;
+  background-color: #ff0000;
+  border-radius: 5px;
+  color: #fff;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor:default;
+}
+.emojis {
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    padding:30px;
+  }
+  .groups {
+    height: 345px;
+    overflow:auto;
+    scrollbar-width:none;
+    padding: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.9);
+  }
+  .group {
+   height: 40px;
+   position: sticky;
+   top: 0;
+   text-align: center;
+   margin-bottom:5px;
+   padding:3px 0px 3px 0px;
+   color: white;
+   font-family: 'Spectral SC', serif;
+   background-color:rgb(64, 64, 64);
+  }
+  
+  .emojisList {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    padding:5px 0px;
+    font-family: 'Gowun Batang', serif;
+    cursor: pointer;
+  }
+  .emojiCharacter {
+    width:80%;
+    font-size: 29px;
+    overflow:auto;
+    scrollbar-width:none;
+  }
+  .name{
+    font-size:22px;
+    margin-left: 5px;
+  }
+  .addEmoji {
+    width: 40px;
+    height: 30px;
+    padding: 1px;
+    font-size:15px;
+    border: none;
+    border-radius: 5px;
+    background-color:rgb(64, 64, 64);
+    color:white;
+    font-family: 'Spectral SC', serif;
+  }
+
+  .addEmoji:hover {
+    background-color: rgb(50, 235, 18);
+  }
+  
+  @media screen and (max-width:1300px) {
+    .emojis{
+        grid-template-columns: repeat(3,1fr);
+    }
+    
+  }
+  @media screen and (max-width:1024px) {
+    .emojis{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .emojisInput {
+    width: 400px;
+    }
+    .myEmojisButton {
+      width: 100px;
+      font-size:16px;
+    }
+    .myEmojisUl{
+      width: 500px;
+    }
+  }
+  @media screen and (max-width:768px) {
+    .emojis{
+        grid-template-columns: repeat(1,1fr);
+    }
+    form {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .emojisInput {
+      height: 40px;
+      }
+    .myEmojisButton {
+        height: 40px;
+        font-size:16px;
+      }
+
+      .myEmojisUl{
+        width: 400px;
+      }
+      .myEmojiCharacter {
+        font-size:25px
+      }
+      .myEmojisName {
+        font-size:20px;
+      }
+      .removeEmoji {
+      height: 30px;
+      }
+    
+  }
+  @media screen and (max-width:550px) {
+    .groups {
+      height: 300px;
+    }
+
+    .title {
+      font-size: 35px;
+    }
+    .emojisInput {
+      width: 320px;
+      height: 40px;
+      }
+    .myEmojisButton {
+        width: 90px;
+        height: 40px;
+        font-size:16px;
+      }
+      .emojiCharacter{
+        font-size:22px;
+      }
+  }
